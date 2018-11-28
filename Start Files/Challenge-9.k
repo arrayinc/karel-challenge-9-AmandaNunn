@@ -27,3 +27,5 @@ or hitting walls.
  Karel should not run into a wall if it builds a house that extends into
  that final corner.
 */
+
+import "turns";
