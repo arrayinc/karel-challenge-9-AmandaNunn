@@ -29,3 +29,45 @@ or hitting walls.
 */
 
 import "turns";
+
+function SolveChallenge(){
+	while(frontIsClear()){
+		findDebris();
+		pickBeeper();
+		buildHouse();
+	}
+}
+
+function findDebris(){
+	while(noBeepersPresent()){move();}
+}
+
+function buildHouse(){
+	turnAround();
+	move();
+	turnRight();
+	buildColumn();
+	turnRight();
+	move();
+	turnRight();
+	buildColumn();
+	turnLeft();
+	move();
+	turnLeft();
+	buildColumn();
+	returnToStreet();
+}
+
+function buildColumn(){
+	repeat(3){
+		putBeeper();
+		move();
+	}
+}
+
+function returnToStreet(){
+	turnAround();
+	while(frontIsClear()){move();}
+	turnLeft();
+	if(frontIsClear()){move();}
+}
